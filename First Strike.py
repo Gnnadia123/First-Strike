@@ -15,7 +15,7 @@ def choose(p):
         if random.randint(1, 100) <= p[r]:
             return r
 
-def bot(log, boten):
+def bot(log, boten, en):
     global p
     botlegal = []
     attacks = []
@@ -69,6 +69,49 @@ def bot(log, boten):
                     if item != "charge":
                         probab[item] = 95 / (len(probab) - 1)
             p = probab
+        elif "charge" in last3 and any(item not in attacks for item in last3):
+            #if the player has charged in the last 3 moves and have not attacked, most likely they will attack [salvo], best to defend
+            probab = {move: 50 for move in botlegal}
+            probab["charge"] = 5
+            probab["shield"] = 75
+            for item in probab:
+                if item != "charge":
+                    probab[item] = 20 / (len(probab) - 1)
+        elif "charge" in last3 and any(item in attacks for item in last3):
+            #is the player has charged and attacked in the last 3 moves, and;
+            if boten < 1:
+                #if the bot has no energy, the player will most likely charge or defend, safe to charge
+                probab = {move: 50 for move in botlegal}
+                probab["charge"] = 80
+                for item in probab:
+                    if item != "charge":
+                        probab[item] = 20 / (len(probab) - 1)
+            elif boten >= 1 and boten <= 3:
+                #if the bot has modest energy, the player will most likely charge or defend, safe to attack
+                probab = {move: 50 for move in botlegal}
+                probab["charge"] = 5
+                probab["shield"] = 5
+                for item in probab:
+                    if item != "charge" and item != "shield":
+                        probab[item] = 90 / (len(probab) - 1)
+            else:
+                #if the bot has high energy, the player will most likely defend, expect a strong defence
+                if "mountain" in botlegal:
+                    return "mountain"
+                elif en >= 2:
+                    probab = {move: 50 for move in botlegal}
+                    probab["shield"] = 70
+                    for item in probab:
+                        if item != "shield":
+                            probab[item] = 30 / (len(probab) - 1)
+                else:
+                    probab = {move: 50 for move in botlegal}
+                    probab["charge"] = 45
+                    probab["shield"] = 15
+                    for item in probab:
+                        if item != "charge" and item != "shield":
+                            probab[item] = 40 / (len(probab) - 1)
+            p = probab
     return choose(probab)
 
 
@@ -83,7 +126,7 @@ def turn():
     trn = 1
     mov = list(playerData["moves"])
     while live or botlive:
-        bmove = bot(log, boten)
+        bmove = bot(log, boten, en)
         botlog.append(bmove)
         boten -= playerData["moves"][bmove]["use"]
         boten += playerData["moves"][bmove]["gain"]
