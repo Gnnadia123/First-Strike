@@ -3,6 +3,7 @@
 
 ### Gameplay ###
 First Strike is a simultaneous, text-based, combat game where players try to defeat an opponent, a moveset shadowing theirs. Why is it called "First Strike"? Because whoever gets the (literal) first strike wins the game.
+The game is written in python and your saves are stored in a `.json` file. To play, please download both files and run them in the same folder!
 
 ### Moveset ###
 As of 7/3/2026, there are five legal moves:
