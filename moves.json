@@ -1,10 +1,4 @@
-DATA = {
-    "name": "",
-    "played" : 0,
-    "won" : 0,
-    "lost" : 0,
-    "gold" : 0,
-    "moves" : {
+{
         "charge": {
         "code": "charge",
         "name": "Charge",
@@ -13,7 +7,7 @@ DATA = {
         "block": [],
         "use": 0,
         "gain": 1,
-        "inuse": False,
+        "inuse": false,
         "type": "misc",
         "price": 0
     },
@@ -28,7 +22,7 @@ DATA = {
         ],
         "use": 0,
         "gain": 0,
-        "inuse": False,
+        "inuse": false,
         "type": "misc",
         "price": 0
     },
@@ -46,7 +40,7 @@ DATA = {
         ],
         "use": 1,
         "gain": 0,
-        "inuse": False,
+        "inuse": false,
         "type": "attack",
         "price": 0
     },
@@ -63,7 +57,7 @@ DATA = {
         ],
         "use": 2,
         "gain": 0,
-        "inuse": False,
+        "inuse": false,
         "type": "attack",
         "price": 0
     },
@@ -83,9 +77,40 @@ DATA = {
         ],
         "use": 7,
         "gain": 0,
-        "inuse": False,
+        "inuse": false,
         "type": "attack+",
         "price": 0
-        },
+    },
+    "taser" : {
+        "code": "taser",
+        "name": "Taser",
+        "desc": "Use 1 energy to shock your opponent, disarming them.",
+        "kill": [
+            "shield",
+            "sword"
+        ],
+        "block": "taser",
+        "use": 1,
+        "gain": 0,
+        "inuse": false,
+        "type": "attack",
+        "price": 180
+    },
+    "shadowball": {
+        "code": "shadowball",
+        "name": "Shadow Ball", 
+        "desc": "Use 4 energy to conjure a spirit that breaks your oppoonent's guard.",
+        "kill":[
+            "energy",
+            "shield",
+            "sword",
+            "taser"
+        ],
+        "block": "shadowball",
+        "use": 4,
+        "gain": 0, 
+        "inuse": false,
+        "type": "attack+",
+        "price": 415
     }
 }
