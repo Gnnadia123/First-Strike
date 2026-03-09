@@ -6,7 +6,7 @@ First Strike is a simultaneous, text-based, combat game where players try to def
 The game is written in python and your saves are stored in a `.json` file. To play, please download both files and run them in the same folder!
 
 ### Moveset ###
-As of 7/3/2026, there are five legal moves:
+As of 9/3/2026, there are five legal moves:
 
 1. \[Misc\] Charge - gain 1 energy
 2. \[Misc\] Shield - Block Basic Attacks, cost 0
@@ -14,8 +14,36 @@ As of 7/3/2026, there are five legal moves:
 4. \[Basic Attack\] Sword - costs 2 energy, destroys Charge and Fireball
 6. \[Attack+\] Mountain - costs 7 energy, destroys everything else
 
+### Beta Moves ###
+*As of 9/3/2026, these moves are still in beta testing and are not combat legal yet:*
+
+1. \[Attack\] Taser - cost 1 energy, destroy chield and sword
+2. \[Attack+\] Shadow Ball - costs 4 energy, destroys everything but mountain and fireball
+
 Do take a while to get used to keeping track of both yours and your opponent's energy, as there is no counter and part of the gameplay is to actively track the energy levels!
 
 Inspired by the popular Singaporean childhood game "Charge". Can't find any other refrences except this [reddit post](https://www.reddit.com/r/askSingapore/comments/11b8iyq/anyone_remembers_the_childhood_game_charge/). 
 
+## Changelog ##
+
+
+**9/3/2026**
+
+v1.1.0
+
+Added main menu and move swapping
+
+Testing beta moves `Taser` and `Shadow Ball`
+
+Added player game saving
+
+
+
+**7/3/2026**
+
+v1.0.0
+
+Initial push to Github
+
+---
 *Aidan Ng 2026*
