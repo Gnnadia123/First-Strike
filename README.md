@@ -35,6 +35,8 @@ Added win ratio in the main menu
 
 Testing beta move `Bow and Arrow`
 
+Updated bot algorithm
+
 
 
 **9/3/2026**
