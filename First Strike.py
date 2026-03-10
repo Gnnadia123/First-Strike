@@ -7,6 +7,8 @@ from defaul import DATA
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(script_dir, '..', 'playerData.json')
 
+legal = ["charge", "shield", "fireball", "sword", "mountain"]
+
 def clear(): 
     os.system("clear")
 
@@ -70,6 +72,13 @@ def bot(log, boten):
                     if item != "charge":
                         probab[item] = 95 / (len(probab) - 1)
             p = probab
+        elif "charge" in last3 and any(item in attacks for item in last3):
+            #the player will most likely not charge, but will attack or defend
+            probab = {move: 50 for move in botlegal}
+            probab["charge"] = 5
+            for item in probab:
+                if item != "charge":
+                    probab[item] = 95 / (len(probab) - 1)
     return choose(probab)
 
 
@@ -131,6 +140,7 @@ def turn():
 
 
 def tutorial():
+    playerData = DATA
     print("Welcome to First Strike! In this game, you battle against an opponent and try to beat them with different skills and abilities!")
     time.sleep(2)
     clear()
@@ -185,6 +195,8 @@ def menu(playerData):
                 playerData["played"] += 1
                 playerData["gold"] += g
                 print("You lost! Better luck next time!")
+            time.sleep(2)
+            clear()
         elif choice == "2":
             print("Deck Management!")
             print("Each deck can only consist of 2 misc, 2 attacks, and 1 attack+")
@@ -202,7 +214,7 @@ def menu(playerData):
                 print(f"Kill: {str(playerData['moves'][mov[int(c)-1]]['kill'])}")
                 print(f"Block: {str(playerData['moves'][mov[int(c)-1]]['block'])}")
                 for i in range(len(playerData["moves"])):
-                    if (playerData["moves"][mov[i]]["type"] == playerData["moves"][mov[int(c)-1]]["type"]) and (playerData["moves"][mov[i]]["inuse"] == False):
+                    if (playerData["moves"][mov[i]]["type"] == playerData["moves"][mov[int(c)-1]]["type"]) and (playerData["moves"][mov[i]]["inuse"] == False) and (playerData["moves"][mov[i]]["code"] not in legal):
                         pos.append(mov[i])
                 if len(pos) > 0:
                     for i in range(len(pos)):
@@ -233,6 +245,7 @@ def menu(playerData):
             clear()
             print("Your Stats")
             print()
+            print(f"Name: {playerData['name']}")
             print(f"Games Played: {playerData['played']}")
             print(f"Games Won: {playerData['won']}")
             print(f"Games Lost: {playerData['lost']}")
