@@ -232,10 +232,17 @@ def menu(playerData):
         elif choice == "4":
             clear()
             print("Your Stats")
+            print()
             print(f"Games Played: {playerData['played']}")
             print(f"Games Won: {playerData['won']}")
             print(f"Games Lost: {playerData['lost']}")
+            try:
+                print(f"Win Rate: {playerData['won'] / playerData['played'] * 100:.2f}%")
+            except:
+                print(f"Win Rate: 0.00%")
+            print()
             print(f"Gold: {playerData['gold']}")
+            print()
             input("Press enter to continue...")
         elif choice == "5":
             with open(data_path, "w") as f:

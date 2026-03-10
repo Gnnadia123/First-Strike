@@ -89,7 +89,7 @@
             "shield",
             "sword"
         ],
-        "block": "taser",
+        "block": ["taser"],
         "use": 1,
         "gain": 0,
         "inuse": false,
@@ -106,11 +106,27 @@
             "sword",
             "taser"
         ],
-        "block": "shadowball",
+        "block": ["shadowball"],
         "use": 4,
         "gain": 0, 
         "inuse": false,
         "type": "attack+",
         "price": 415
+    },
+    "bow": {
+        "code": "bow",
+        "name": "Bow and Arrow",
+        "desc": "Use 2 energy to shoot a precise arrow at your opponent.",
+        "kill": [
+            "charge",
+            "sword",
+            "taser"
+        ],
+        "block": ["bow"],
+        "use": 2,
+        "gain": 0,
+        "inuse": false,
+        "type": "attack",
+        "price": 240
     }
 }
