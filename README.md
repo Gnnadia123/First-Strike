@@ -27,9 +27,19 @@ Inspired by the popular Singaporean childhood game "Charge". Can't find any othe
 ## Changelog ##
 
 
+**10/3/2026**
+
+*v1.1.1*
+
+Added win ratio in the main menu
+
+Testing beta move `Bow and Arrow`
+
+
+
 **9/3/2026**
 
-v1.1.0
+*v1.1.0*
 
 Added main menu and move swapping
 
@@ -41,7 +51,7 @@ Added player game saving
 
 **7/3/2026**
 
-v1.0.0
+*v1.0.0*
 
 Initial push to Github
 
