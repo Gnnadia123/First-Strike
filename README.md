@@ -15,10 +15,11 @@ As of 9/3/2026, there are five legal moves:
 6. \[Attack+\] Mountain - costs 7 energy, destroys everything else
 
 ### Beta Moves ###
-*As of 9/3/2026, these moves are still in beta testing and are not combat legal yet:*
+*As of 11/3/2026, these moves are still in beta testing and are not combat legal yet:*
 
 1. \[Attack\] Taser - cost 1 energy, destroy chield and sword
 2. \[Attack+\] Shadow Ball - costs 4 energy, destroys everything but mountain and fireball
+3. \[Attack\] Bow and Arrow - costs 2 energy, destroys charge, sword and taser (if added)
 
 Do take a while to get used to keeping track of both yours and your opponent's energy, as there is no counter and part of the gameplay is to actively track the energy levels!
 
