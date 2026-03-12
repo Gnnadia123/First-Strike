@@ -4,10 +4,13 @@ import os
 import json
 from defaul import DATA
 
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(script_dir, '..', 'playerData.json')
 
+
 legal = ["charge", "shield", "fireball", "sword", "mountain"]
+
 
 def clear(): 
     os.system("clear")
