@@ -29,7 +29,7 @@ Inspired by the popular Singaporean childhood game "Charge". Can't find any othe
 
 
 
-**10/3/2026**
+**12/3/2026**
 
 *v1.1.2*
 
