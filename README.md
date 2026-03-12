@@ -28,6 +28,15 @@ Inspired by the popular Singaporean childhood game "Charge". Can't find any othe
 ## Changelog ##
 
 
+
+**10/3/2026**
+
+*v1.1.2*
+
+Testing online shop API *\[Beta Optional Update\]*
+
+
+
 **10/3/2026**
 
 *v1.1.1*
