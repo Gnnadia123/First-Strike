@@ -20,8 +20,9 @@ app = fastapi.FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"shop":
-            {"item 1" : shop[0]},
-             "item 2" : shop[1],
-             "item 3" : shop[2]
+    return {"shop": {
+            "item 1" : shop[0],
+            "item 2" : shop[1],
+            "item 3" : shop[2]
             }
+        }
