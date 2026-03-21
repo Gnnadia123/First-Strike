@@ -29,5 +29,5 @@ def generate_shop():
 @app.get("/")
 def read_root():
     return {
-        "shop": "working"
+        "shop": generate_shop()
     }
