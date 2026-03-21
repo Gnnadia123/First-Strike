@@ -22,7 +22,7 @@ def generate_shop():
 
     random.seed(hour)  # same shop for the same hour
 
-    shop = [random.choice(moves) for _ in range(3)]
+    shop = random.sample(moves, 3)
     return shop
 
 
