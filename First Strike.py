@@ -3,7 +3,10 @@ import random
 import os 
 import json
 from defaul import DATA
+import requests
 
+API_URL = "https://firststrike.techtime.coffee/"
+API_KEY = ""
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(script_dir, '..', 'playerData.json')
