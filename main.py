@@ -15,11 +15,11 @@ with open(MOVES_PATH, "r") as f:
 
 moves = list(moves_data.values())
 
+now = datetime.now(timezone.utc)
+hour = now.hour
+
 
 def generate_shop():
-    now = datetime.now(timezone.utc)
-    hour = now.hour
-
     random.seed(hour)  # same shop for the same hour
 
     shop = random.sample(moves, 3)
@@ -29,5 +29,5 @@ def generate_shop():
 @app.get("/")
 def read_root():
     return {
-        "shop": generate_shop()
+        ("shop " + now.hour): generate_shop()
     }
