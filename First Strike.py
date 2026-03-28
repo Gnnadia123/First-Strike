@@ -210,39 +210,44 @@ def menu(playerData):
             for i in range(5):
                 print(f"{i+1}. {playerData['moves'][mov[i]]['name']} - {playerData['moves'][mov[i]]['desc']}")
             c = input("Choose a move to view or modify: ")
-            if 1 <= int(c) <= 5:
-                pos = []
-                print(f"{playerData['moves'][mov[int(c)-1]]['name']} - {playerData['moves'][mov[int(c)-1]]['desc']}")
-                print(f"Slot: {int(c)}")
-                print(f"Type: {playerData['moves'][mov[int(c)-1]]['type']}")
-                print(f"Use: {playerData['moves'][mov[int(c)-1]]['use']}")
-                print(f"Gain: {playerData['moves'][mov[int(c)-1]]['gain']}")
-                print(f"Kill: {str(playerData['moves'][mov[int(c)-1]]['kill'])}")
-                print(f"Block: {str(playerData['moves'][mov[int(c)-1]]['block'])}")
-                for i in range(len(playerData["moves"])):
-                    if (playerData["moves"][mov[i]]["type"] == playerData["moves"][mov[int(c)-1]]["type"]) and (playerData["moves"][mov[i]]["inuse"] == False) and (playerData["moves"][mov[i]]["code"] not in legal):
-                        pos.append(mov[i])
-                if len(pos) > 0:
-                    for i in range(len(pos)):
-                        print(f"{i+1}. {playerData['moves'][pos[i]]['name']} - {playerData['moves'][pos[i]]['desc']}")
-                    swap = input("Choose a move to swap with or press enter to go back: ")
-                    if swap:
-                        if 1 <= int(swap) <= len(pos):
-                            playerData["moves"][mov[int(c)-1]]["inuse"] = False
-                            playerData["moves"][pos[int(swap)-1]]["inuse"] = True
-                            index_to_swap = mov.index(pos[int(swap)-1])
-                            mov[int(c)-1], mov[index_to_swap] = mov[index_to_swap], mov[int(c)-1]
-                            print("Move swapped!")
-                            with open(data_path, "w") as f:
-                                json.dump(playerData, f, indent=4)
-                            time.sleep(2)
-                        else:
-                            print("Invalid selection!")
-                            time.sleep(2)
-                else:
-                    print("No available moves to swap with!")
-                    time.sleep(2)
-                    clear()
+            try:
+                if 1 <= int(c) <= 5:
+                    pos = []
+                    print(f"{playerData['moves'][mov[int(c)-1]]['name']} - {playerData['moves'][mov[int(c)-1]]['desc']}")
+                    print(f"Slot: {int(c)}")
+                    print(f"Type: {playerData['moves'][mov[int(c)-1]]['type']}")
+                    print(f"Use: {playerData['moves'][mov[int(c)-1]]['use']}")
+                    print(f"Gain: {playerData['moves'][mov[int(c)-1]]['gain']}")
+                    print(f"Kill: {str(playerData['moves'][mov[int(c)-1]]['kill'])}")
+                    print(f"Block: {str(playerData['moves'][mov[int(c)-1]]['block'])}")
+                    for i in range(len(playerData["moves"])):
+                        if (playerData["moves"][mov[i]]["type"] == playerData["moves"][mov[int(c)-1]]["type"]) and (playerData["moves"][mov[i]]["inuse"] == False) and (playerData["moves"][mov[i]]["code"] not in legal):
+                            pos.append(mov[i])
+                    if len(pos) > 0:
+                        for i in range(len(pos)):
+                            print(f"{i+1}. {playerData['moves'][pos[i]]['name']} - {playerData['moves'][pos[i]]['desc']}")
+                        swap = input("Choose a move to swap with or press enter to go back: ")
+                        if swap:
+                            if 1 <= int(swap) <= len(pos):
+                                playerData["moves"][mov[int(c)-1]]["inuse"] = False
+                                playerData["moves"][pos[int(swap)-1]]["inuse"] = True
+                                index_to_swap = mov.index(pos[int(swap)-1])
+                                mov[int(c)-1], mov[index_to_swap] = mov[index_to_swap], mov[int(c)-1]
+                                print("Move swapped!")
+                                with open(data_path, "w") as f:
+                                    json.dump(playerData, f, indent=4)
+                                time.sleep(2)
+                            else:
+                                print("Invalid selection!")
+                                time.sleep(2)
+                    else:
+                        print("No available moves to swap with!")
+                        time.sleep(2)
+                        clear()
+            except:
+                print("Invalid selection!")
+                time.sleep(2)
+                clear()
         elif choice == "3":
             print("Shop coming soon!")
             time.sleep(2)
@@ -277,7 +282,7 @@ def menu(playerData):
 try:
     with open(data_path, "r") as f:
         playerData = json.load(f)
-except FileNotFoundError:
+except:
     tutorial()
 
 menu(playerData)
