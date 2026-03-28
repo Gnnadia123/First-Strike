@@ -1,5 +1,5 @@
 {
-        "charge": {
+    "charge": {
         "code": "charge",
         "name": "Charge",
         "desc": "Gain 1 energy.",
@@ -9,7 +9,8 @@
         "gain": 1,
         "inuse": false,
         "type": "misc",
-        "price": 0
+        "price": 0,
+        "legal": true
     },
     "shield": {
         "code": "shield",
@@ -24,7 +25,8 @@
         "gain": 0,
         "inuse": false,
         "type": "misc",
-        "price": 0
+        "price": 0,
+        "legal": true
     },
     "fireball": {
         "code": "fireball",
@@ -42,7 +44,8 @@
         "gain": 0,
         "inuse": false,
         "type": "attack",
-        "price": 0
+        "price": 0,
+        "legal": true
     },
     "sword": {
         "code": "sword",
@@ -59,7 +62,8 @@
         "gain": 0,
         "inuse": false,
         "type": "attack",
-        "price": 0
+        "price": 0,
+        "legal": true
     },
     "mountain": {
         "code": "mountain",
@@ -79,7 +83,8 @@
         "gain": 0,
         "inuse": false,
         "type": "attack+",
-        "price": 0
+        "price": 0,
+        "legal": true
     },
     "taser" : {
         "code": "taser",
@@ -94,7 +99,8 @@
         "gain": 0,
         "inuse": false,
         "type": "attack",
-        "price": 180
+        "price": 180,
+        "legal": true
     },
     "shadowball": {
         "code": "shadowball",
@@ -111,7 +117,8 @@
         "gain": 0, 
         "inuse": false,
         "type": "attack+",
-        "price": 415
+        "price": 415,
+        "legal": true
     },
     "bow": {
         "code": "bow",
@@ -127,6 +134,7 @@
         "gain": 0,
         "inuse": false,
         "type": "attack",
-        "price": 240
+        "price": 240,
+        "legal": true
     }
 }

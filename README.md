@@ -36,11 +36,16 @@ Inspired by the popular Singaporean childhood game "Charge". Can't find any othe
 
 ## Changelog ##
 
+**28/3/2026**
+
+*v1.1.2c*
+
+Major shop changes. However, no effects have been implemented yet.
 
 
 **27/3/2026**
 
-*v1.2.2b*
+*v1.1.2b*
 
 Testing online shop API *\[Beta Optional Update\]*
 
